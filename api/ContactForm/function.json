@@ -1,0 +1,28 @@
+{
+  "bindings": [
+    {
+      "authLevel": "anonymous",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": [ 
+        "post"
+      ],
+      "route": "contact"
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "res"
+    },
+    {
+        "name": "sendGrid",
+        "type": "sendGrid",
+        "direction": "out",
+        "apiKey" : "SendGridKey",
+        "to": "kees@schollaart.net",
+        "from": "kees@schollaart.net",
+        "subject": "SendGrid output bindings"
+    }
+  ]
+}

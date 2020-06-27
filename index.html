@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Simple contact form with Azure Static Web Apps</title>
+</head>
+
+<body>
+  <main>
+    <h1>Simple contact form with Azure Static Web Apps</h1>
+    <form method="post" action="api/contact?redirectUrl=/thank-you.html" method="post" id="contact-form">
+
+      <b>Name:</b><br />
+      <input type="text" name="name" required /><br /><br />
+
+      <b>Email:</b><br />
+      <input type="email" name="email" /><br /><br />
+
+      <b>Text:</b><br />
+      <textarea name="text"></textarea><br /><br />
+
+      <button class="g-recaptcha" data-sitekey="<<your sitekey>>" data-callback='onSubmit'
+        data-action='submit'>Submit</button>
+    </form>
+  </main>
+</body>
+<script>
+  function onSubmit(token) {
+    document.getElementById("contact-form").submit();
+  }
+</script>
+<script src="https://www.google.com/recaptcha/api.js"></script>
+
+</html>
